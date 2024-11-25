@@ -1,51 +1,44 @@
-@extends('layouts.layout')
+@extends('layouts.admin_master')
 
 @section('content')
-    <h1>Daftar Kerusakan Alat</h1>
-
-    <!-- Tampilkan pesan sukses jika ada -->
-    @if(session('success'))
-        <div style="color: green;">
-            {{ session('success') }}
-        </div>
+<div class="container">
+    <h1>Data Peminjaman</h1>
+    <a href="{{ route('peminjaman.create') }}" class="btn btn-primary mb-3">Tambah Peminjaman</a>
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-
-    <!-- Tombol untuk menambah data kerusakan alat -->
-    <a href="{{ route('kerusakan_alat.create') }}" style="padding: 10px; background-color: blue; color: white; text-decoration: none;">Tambah Kerusakan Alat</a>
-
-    <!-- Tabel daftar kerusakan alat -->
-    <table border="1" cellspacing="0" cellpadding="10" style="margin-top: 20px; width: 100%;">
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID Alat</th>
-                <th>Spesifikasi</th>
-                <th>Kerusakan</th>
-                <th>Tanggal Kerusakan</th>
-                <th>Keterangan</th>
+                <th>ID</th>
+                <th>Nama Alat</th>
+                <th>Nama Peminjam</th>
+                <th>Jumlah</th>
+                <th>Tanggal Peminjaman</th>
+                <th>Kondisi Pinjam</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($kerusakanAlat as $kerusakan)
+            @foreach ($peminjaman as $item)
                 <tr>
-                    <td>{{ $kerusakan->id_alat }}</td>
-                    <td>{{ $kerusakan->spesifikasi }}</td>
-                    <td>{{ $kerusakan->kerusakan }}</td>
-                    <td>{{ $kerusakan->tgl_kerusakan }}</td>
-                    <td>{{ $kerusakan->keterangan }}</td>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->alat->name }}</td>
+                    <td>{{ $item->user->name }}</td>
+                    <td>{{ $item->jumlah }}</td>
+                    <td>{{ $item->tgl_peminjaman }}</td>
+                    <td>{{ $item->kondisi_pinjam }}</td>
                     <td>
-                        <!-- Tombol Edit -->
-                        <a href="{{ route('kerusakan_alat.edit', $kerusakan->id) }}" style="padding: 5px; background-color: orange; color: white; text-decoration: none;">Edit</a>
-
-                        <!-- Tombol Hapus -->
-                        <form action="{{ route('kerusakan_alat.destroy', $kerusakan->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('peminjaman.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('peminjaman.destroy', $item->id) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" style="padding: 5px; background-color: red; color: white; border: none;">Hapus</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection
