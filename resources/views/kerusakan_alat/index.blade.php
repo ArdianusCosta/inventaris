@@ -10,9 +10,9 @@
         </div>
     @endif
 
-    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Data Kerusakan</a>
+    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Kerusakan Alat</a>
 
-    <table class="table table-striped" id="kerusakan_alat">
+    <table border="1" cellspacing="0" cellpadding="10" style="margin-top: 20px; width: 100%;">
         <thead>
             <tr>
                 <th>ID Alat</th>
