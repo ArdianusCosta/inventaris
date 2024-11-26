@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <a href="{{ route('kerusakan_alat.create') }}" style="padding: 10px; background-color: blue; color: white; text-decoration: none;">Tambah Kerusakan Alat</a>
+    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Data Kerusakan</a>
 
     <!-- Tabel daftar kerusakan alat -->
     <table border="1" cellspacing="0" cellpadding="10" style="margin-top: 20px; width: 100%;">
