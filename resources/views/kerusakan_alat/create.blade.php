@@ -7,23 +7,23 @@
         @csrf
         <div>
             <label>ID Alat:</label>
-            <input type="text" name="id_alat" required>
+            <input type="text" name="id_alat" class="form-control" required>
         </div>
         <div>
             <label>Spesifikasi:</label>
-            <textarea name="spesifikasi"></textarea>
+            <input type="text" name="Spesifikasi" class="form-control" required>
         </div>
         <div>
             <label>Kerusakan:</label>
-            <textarea name="kerusakan" required></textarea>
+            <input type="text" name="Kerusakan" class="form-control" required>
         </div>
         <div>
             <label>Tanggal Kerusakan:</label>
-            <input type="date" name="tgl_kerusakan" required>
+            <input type="text" name="Tanggal Kerusakan" class="form-control" required>
         </div>
         <div>
             <label>Keterangan:</label>
-            <textarea name="keterangan"></textarea>
+            <input type="text" name="Keterangan" class="form-control" required>
         </div>
         <button type="submit">Simpan</button>
     </form>
