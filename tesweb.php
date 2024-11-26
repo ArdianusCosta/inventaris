@@ -1,1 +1,0 @@
-aku ganteng baget lohhhhhhhh

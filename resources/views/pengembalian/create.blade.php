@@ -7,23 +7,23 @@
         @csrf
         <div class="mb-3">
             <label for="id_alat" class="form-label">ID Alat</label>
-            <input type="number" class="form-control" id="id_alat" name="id_alat" required>
+            <input type="number" class="form-control" name="id_alat" required>
         </div>
         <div class="mb-3">
             <label for="id_peminjaman" class="form-label">ID Peminjaman</label>
-            <input type="number" class="form-control" id="id_peminjaman" name="id_peminjaman" required>
+            <input type="number" class="form-control" name="id_peminjaman" required>
         </div>
         <div class="mb-3">
             <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" class="form-control" id="jumlah" name="jumlah" required min="1">
+            <input type="number" class="form-control" name="jumlah" required min="1">
         </div>
         <div class="mb-3">
             <label for="tgl_kembali" class="form-label">Tanggal Kembali</label>
-            <input type="date" class="form-control" id="tgl_kembali" name="tgl_kembali" required>
+            <input type="date" class="form-control" name="tgl_kembali" required>
         </div>
         <div class="mb-3">
             <label for="kondisi_kembali" class="form-label">Kondisi Kembali</label>
-            <select class="form-select" id="kondisi_kembali" name="kondisi_kembali" required>
+            <select class="form-select" name="kondisi_kembali" required>
                 <option value="Baik">Baik</option>
                 <option value="Rusak">Rusak</option>
             </select>

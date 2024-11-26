@@ -28,7 +28,7 @@
                 <option value="Rusak">Rusak</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
         <a href="{{ route('inventaris.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>

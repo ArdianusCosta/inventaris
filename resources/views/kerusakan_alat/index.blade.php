@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <a href="{{ route('kerusakan_alat.create') }}" style="padding: 10px; background-color: blue; color: white; text-decoration: none;">Tambah Kerusakan Alat</a>
+    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Kerusakan Alat</a>
 
     <!-- Tabel daftar kerusakan alat -->
     <table border="1" cellspacing="0" cellpadding="10" style="margin-top: 20px; width: 100%;">
@@ -34,12 +34,11 @@
                     <td>{{ $kerusakan->keterangan }}</td>
                     <td>
                         <!-- Tombol Edit -->
-                        <a href="{{ route('kerusakan_alat.edit', $kerusakan->id) }}" style="padding: 5px; background-color: orange; color: white; text-decoration: none;">Edit</a>
-                        <form action="{{ route('inventaris.destroy', $item->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('kerusakan_alat.edit', $kerusakan->id) }}" class="btn btn-warning">Edit</a>
                         <form action="{{ route('kerusakan_alat.destroy', $kerusakan->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" style="padding: 5px; background-color: red; color: white; border: none;">Hapus</button>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
                         </form>
                     </td>
                 </tr>
