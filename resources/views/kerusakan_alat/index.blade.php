@@ -12,8 +12,7 @@
 
     <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Data Kerusakan</a>
 
-    <!-- Tabel daftar kerusakan alat -->
-    <table border="1" cellspacing="0" cellpadding="10" style="margin-top: 20px; width: 100%;">
+    <table class="table table-striped" id="kerusakan_alat">
         <thead>
             <tr>
                 <th>ID Alat</th>
