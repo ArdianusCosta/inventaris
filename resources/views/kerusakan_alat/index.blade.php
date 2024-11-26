@@ -1,13 +1,16 @@
 @extends('layouts.admin_master')
 
 @section('content')
-<div class="container">
     <h1>Daftar Kerusakan Alat</h1>
-    <div class="mb-3">
-        <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Data Kerusakan</a>
-        <button onclick="printTable()" class="btn btn-secondary">Cetak</button>
-    </div>
-    <table class="table table-striped" id="kerusakanAlatTable">
+
+    <!-- Tampilkan pesan sukses jika ada -->
+    @if(session('success'))
+        <div style="color: green;">
+            {{ session('success') }}
+        </div>
+    @endif
+    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Kerusakan Alat</a>
+    <table class="table table-striped" id="alatTable">
         <thead>
             <tr>
                 <th>ID Alat</th>
@@ -20,49 +23,24 @@
         </thead>
         <tbody>
             @foreach ($kerusakanAlat as $kerusakan)
-            <tr>
-                <td>{{ $kerusakan->id_alat }}</td>
-                <td>{{ $kerusakan->spesifikasi }}</td>
-                <td>{{ $kerusakan->kerusakan }}</td>
-                <td>{{ $kerusakan->tgl_kerusakan }}</td>
-                <td>{{ $kerusakan->keterangan }}</td>
-                <td>
-                    <a href="{{ route('kerusakan_alat.edit', $kerusakan->id) }}" class="btn btn-warning">Edit</a>
-                    <form action="{{ route('kerusakan_alat.destroy', $kerusakan->id) }}" method="POST" style="display:inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Hapus</button>
-                    </form>
-                </td>
-            </tr>
+                <tr>
+                    <td>{{ $kerusakan->id_alat }}</td>
+                    <td>{{ $kerusakan->spesifikasi }}</td>
+                    <td>{{ $kerusakan->kerusakan }}</td>
+                    <td>{{ $kerusakan->tgl_kerusakan }}</td>
+                    <td>{{ $kerusakan->keterangan }}</td>
+                    <td>
+                        <!-- Tombol Edit -->
+                        <a href="{{ route('kerusakan_alat.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ route('inventaris.destroy', $item->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('kerusakan_alat.destroy', $kerusakan->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
         </tbody>
     </table>
-</div>
-
-<script>
-    function printTable() {
-        let actionButtons = document.querySelectorAll('.btn');
-        actionButtons.forEach(button => button.style.display = 'none');
-        window.print();
-        actionButtons.forEach(button => button.style.display = '');
-    }
-</script>
-
-<style>
-    @media print {
-        .btn, h1, .mb-3 {
-            display: none !important;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: left;
-        }
-    }
-</style>
 @endsection
