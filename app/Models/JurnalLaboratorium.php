@@ -11,7 +11,6 @@ class JurnalLaboratorium extends Model
 
     protected $table = 'jurnal_laboratorium'; // Nama tabel
 
-    // Kolom yang boleh diisi secara mass assignment
     protected $fillable = [
         'hari',
         'tgl',

@@ -9,11 +9,16 @@
             {{ session('success') }}
         </div>
     @endif
+<<<<<<< HEAD
 
     <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Kerusakan Alat</a>
 
     <!-- Tabel daftar kerusakan alat -->
     <table border="1" cellspacing="0" cellpadding="10" style="margin-top: 20px; width: 100%;">
+=======
+    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Kerusakan Alat</a>
+    <table class="table table-striped" id="alatTable">
+>>>>>>> 3c5aeb8cdc2d5a751ae55bcf59654a96efd8531e
         <thead>
             <tr>
                 <th>ID Alat</th>
@@ -34,7 +39,12 @@
                     <td>{{ $kerusakan->keterangan }}</td>
                     <td>
                         <!-- Tombol Edit -->
+<<<<<<< HEAD
                         <a href="{{ route('kerusakan_alat.edit', $kerusakan->id) }}" class="btn btn-warning">Edit</a>
+=======
+                        <a href="{{ route('kerusakan_alat.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ route('inventaris.destroy', $item->id) }}" method="POST" style="display:inline;">
+>>>>>>> 3c5aeb8cdc2d5a751ae55bcf59654a96efd8531e
                         <form action="{{ route('kerusakan_alat.destroy', $kerusakan->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
