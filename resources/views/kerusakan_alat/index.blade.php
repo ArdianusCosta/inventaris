@@ -9,8 +9,6 @@
             {{ session('success') }}
         </div>
     @endif
-    <a href="{{ route('kerusakan_alat.create') }}" class="btn btn-primary">Tambah Kerusakan Alat</a>
-    <table class="table table-striped" id="alatTable">
         <thead>
             <tr>
                 <th>ID Alat</th>
@@ -31,8 +29,6 @@
                     <td>{{ $kerusakan->keterangan }}</td>
                     <td>
                         <!-- Tombol Edit -->
-                        <a href="{{ route('kerusakan_alat.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('inventaris.destroy', $item->id) }}" method="POST" style="display:inline;">
                         <form action="{{ route('kerusakan_alat.destroy', $kerusakan->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

@@ -19,7 +19,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="{{asset('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__wobble" src="{{asset('admin/dist/img/INVENTARIS (1) (1).png')}}" alt="AdminLTELogo" height="100" width="100">
   </div>
 
   <!-- Navbar -->
