@@ -23,11 +23,16 @@
         </div>
         <div class="mb-3">
             <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" name="jumlah" id="jumlah" class="form-control">
+            <input type="number" name="jumlah" id="jumlah" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="tgl_peminjaman" class="form-label">Tanggal Peminjaman</label>
-            <input type="date" name="tgl_peminjaman" id="tgl_peminjaman" class="form-control">
+            <input
+                type="date"
+                name="tgl_peminjaman"
+                id="tgl_peminjaman"
+                class="form-control"
+                required>
         </div>
         <div class="mb-3">
             <label for="kondisi_pinjam" class="form-label">Kondisi Pinjam</label>
@@ -39,4 +44,13 @@
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
+
+<script>
+    // Mengatur tanggal peminjaman otomatis ke hari ini
+    document.addEventListener('DOMContentLoaded', function() {
+        const tglPeminjamanInput = document.getElementById('tgl_peminjaman');
+        const today = new Date().toISOString().split('T')[0]; // Format tanggal: YYYY-MM-DD
+        tglPeminjamanInput.value = today;
+    });
+</script>
 @endsection

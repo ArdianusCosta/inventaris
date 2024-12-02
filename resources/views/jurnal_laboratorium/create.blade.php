@@ -65,7 +65,7 @@
         <a href="{{ route('jurnal_laboratorium.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
-
+    
 <script>
     // Mengatur dropdown hari ke hari saat ini
     const hariArray = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
