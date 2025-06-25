@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerbaikanController;
 use App\Http\Controllers\StokBahanController;
@@ -31,4 +32,7 @@ Route::resource('kerusakan_alat', KerusakanAlatController::class);
 Route::resource('pengembalian', PengembalianController::class);
 Route::resource('stok_bahan', StokBahanController::class);
 Route::resource('jurnal_laboratorium', JurnalLaboratoriumController::class);
+
+Route::get('auth/login', [LoginController::class, 'index'])->name('auth.login');
+Route::post('auth/login', [LoginController::class, 'login'])->name('sukses.login');
 
